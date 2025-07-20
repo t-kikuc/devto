@@ -7,6 +7,8 @@ tags: ["aws", "ecs", "devops", "bluegreen"]
 
 On July 18, 2025, Amazon ECS received a major deployment enhancement. It's not just about native Blue/Green support - there's much more to it!
 
+_this is translated from [my article](https://zenn.dev/cadp/articles/ecs-builtin-blue-green) in Japanese_
+
 ## Key Points
 
 - Native Blue/Green is now available **without CodeDeploy**
@@ -165,9 +167,9 @@ Previously unchangeable after service creation, now supports 4 update patterns:
 - `ECS` -> `EXTERNAL`
 - `EXTERNAL` -> `ECS`
 
-*Hmm?*
+_Hmm?_
 
-#### Signs of `CODE_DEPLOY` Type Deprecation *Not CodeDeploy itself*
+#### Signs of `CODE_DEPLOY` Type Deprecation _Not CodeDeploy itself_
 
 Notice no update patterns TO `CODE_DEPLOY`.
 
@@ -183,7 +185,7 @@ This likely prompted deployment controller update support.
 
 No deprecation notices or migration guides for `EXTERNAL`, suggesting it's safe.
 
-*Like EKS on Fargate Auto Mode, nice to see deprecation/removal after superior alternatives emerge. Unlike certain other cases...*
+_Like EKS on Fargate Auto Mode, nice to see deprecation/removal after superior alternatives emerge. Unlike certain other cases..._
 
 #### Benefits of This Update
 
