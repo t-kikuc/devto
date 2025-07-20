@@ -1,13 +1,13 @@
 ---
 title: "ECS Native Blue/Green is Here! With Strong Hooks and Dark Canary"
-published: false
+published: true
 description: "Amazon ECS now supports native Blue/Green with powerful features like lifecycle hooks and dark canary testing. Let's explore how it works and what benefits it brings!"
 tags: ["aws", "ecs", "devops", "bluegreen"]
 ---
 
 On July 18, 2025, Amazon ECS received a major deployment enhancement. It's not just about native Blue/Green support - there's much more to it!
 
-_this is translated from [my article](https://zenn.dev/cadp/articles/ecs-builtin-blue-green) in Japanese_
+_This article is translated from [my article](https://zenn.dev/cadp/articles/ecs-builtin-blue-green) in Japanese._
 
 ## Key Points
 
@@ -49,18 +49,20 @@ Rolling updates also had challenges:
 
 ### Benefits of This Update
 
-- Easy Blue/Green deployment without CodeDeploy setup
-- Can switch between rolling update ↔ B/G **even after service creation**
-  - Basically just change the `strategy`. No service recreation & migration needed
-  - Easy to "start simple with rolling update, switch to B/G when needed"
-  - Detailed migration guide in [this documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/migrate-deployment-strategies.html)
-    - Also includes B/G → rolling update migration, suggesting rolling updates aren't deprecated
-- Features from CodeDeploy are available, making it convenient + easy to migrate from CodeDeploy
-  - Flexible validation with Lambda
-  - Zero-impact new version testing in production environment
-- Being a native feature, likely to have fewer constraints than CodeDeploy integration
-- **Blue/Green deployment now works with Service Connect**
-  - Removes one drawback of Service Connect and shows it's being actively maintained
+The update brings several significant improvements:
+
+- Easy Blue/Green deployment without CodeDeploy setup.
+- Able to switch between rolling update and B/G **even after service creation**.
+  - Basically just change the `strategy`. No service recreation & migration needed.
+  - Easy to "start simple with rolling update, switch to B/G when needed".
+  - Detailed migration guide in [this documentation](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/migrate-deployment-strategies.html).
+    - Also includes B/G → rolling update migration, suggesting rolling updates aren't deprecated.
+- Features from CodeDeploy are available, making it convenient + easy to migrate from CodeDeploy.
+  - Flexible validation with Lambda.
+  - Zero-impact new version testing in production environment.
+- Being a native feature, likely to have fewer constraints than CodeDeploy integration.
+- **Blue/Green deployment now works with Service Connect**.
+  - Removes one drawback of Service Connect and shows it's being actively maintained.
 
 ## Detailed Features
 
@@ -129,13 +131,13 @@ In actual deployment, only the `PRE_SCALE_UP` hook triggered Lambda. Unclear if 
 ### Test Listener / Listener Rule (Dark Canary)
 
 Using test listeners/listener rules, developers/testers can access the Green environment before production traffic shifts.
-Called "Dark Canary" as end users don't access it.
+This is called "Dark Canary" as end users don't access it.
 
 #### Benefits
 
-Compared to simple Blue/Green, reduces risks of:
-- "Complete disaster when 100% traffic shifted to Green, even temporarily"
-- "Works in staging but fails in production..."
+Compared to simple Blue/Green, this reduces the risks of:
+- Complete disaster when 100% traffic is shifted to Green, even temporarily
+- "Works in staging but fails in production" scenarios
 
 #### Usage
 
@@ -441,7 +443,7 @@ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect-conc
 
 ## Conclusion
 
-This is one of ECS's biggest updates recently, including deployment controller updates.
-I'm curious about Service Connect's Blue/Green.
+This is one of ECS's most significant updates recently, including changing deployment controller.
+I'm curious about Service Connect's Blue/Green implementation.
 
-I'm relieved about continued Service Connect and External deployment support. However, `CODE_DEPLOY` type should probably be avoided going forward.
+I'm relieved about the continued support for Service Connect and External deployment. However, the `CODE_DEPLOY` type should probably be avoided going forward.
