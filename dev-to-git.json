@@ -22,5 +22,9 @@
   {
     "relativePathToArticle": "./devto/testpost-20250720-1/index.md",
     "id": "2707182"
+  },
+  {
+    "relativePathToArticle": "./devto/ecs-native-bluegreen/index.md",
+    "id": "2707489"
   }
 ]
