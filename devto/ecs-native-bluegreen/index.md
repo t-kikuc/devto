@@ -9,12 +9,12 @@ On July 18, 2025, Amazon ECS received a major deployment enhancement. It's not j
 
 ## Key Points
 
-- Native Blue/Green is now available without CodeDeploy
-  - Various validation timings through lifecycle hooks with Lambda
-  - Pre-validation in production environment with zero user impact (Dark Canary) using test listeners/listener rules
-- Blue/Green is now supported with Service Connect
+- Native Blue/Green is now available **without CodeDeploy**
+  - Various validation timings through **lifecycle hooks** with Lambda
+  - Pre-validation in production environment with zero user impact (**Dark Canary**) using test listeners/listener rules
+- Blue/Green is now supported **with Service Connect**
 - Deployment controller can be changed after service creation
-- You should avoid CodeDeploy-based Blue/Green (migration guide available)
+- You should **avoid CodeDeploy-based Blue/Green** (migration guide available)
 
 **Note**: This article does not cover Blue/Green with Service Connect.
 
