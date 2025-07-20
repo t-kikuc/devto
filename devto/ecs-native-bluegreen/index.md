@@ -1,9 +1,8 @@
 ---
-title: "ECS Native Blue/Green is Here! With Strong Hooks, Dark Canary, and Controller Update"
+title: "ECS Native Blue/Green is Here! With Strong Hooks and Dark Canary"
 published: false
 description: "Amazon ECS now supports native Blue/Green with powerful features like lifecycle hooks and dark canary testing. Let's explore how it works and what benefits it brings!"
 tags: ["aws", "ecs", "devops", "bluegreen"]
-cover_image: "./assets/workflow.dio.png"
 ---
 
 On July 18, 2025, Amazon ECS received a major deployment enhancement. It's not just about native Blue/Green support - there's much more to it!
